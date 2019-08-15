@@ -1,7 +1,5 @@
-# Document Templates
-This repo contains LaTeX templates that can be used for posters, papers, documents, etc. Each branch is its own theme that can be taken and used as necessary.
+# Poster Template - UW/CNERG
 
-## Branches
-
-### Thesis or Preliminary Document Themes
-* thesis-template-1
+This theme uses the beamer document class to create a single slide (frame) of a specified size.
+Wisconsin logo is used by default. CNERG logo can be easily swapped with a different logo.
+Content is added as blocks in columns.

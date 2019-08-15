@@ -1,0 +1,149 @@
+\ProvidesPackage{beamerthemeUWMadison} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{UW-Madison-colors}
+\selectcolormodel{cmyk}
+\mode<presentation>
+{
+  \usefonttheme{professionalfonts}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\auspice}{\@dblarg\beamer@auspice}  %this is where we are cloning the \title macro 
+\long\def\beamer@auspice[#1]#2{%
+  \def\insertauspice{#2}%
+  \def\beamer@shortauspice{#1}%
+  \def\insertshortauspice{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamercolor{headline}{fg=uw-red,bg=uw-page-bg}
+\setbeamercolor{footline}{fg=uw-gray-darkest, bg=uw-page-bg}
+\setbeamerfont{footline}{size=\large,series=\tt}
+\setbeamercolor{separation line}{bg=uw-gray-darkest}
+\setbeamercolor{title in headline}{fg=uw-red}
+\setbeamercolor{author in headline}{fg=uw-gray-darkest}
+\setbeamercolor{institute in headline}{fg=uw-red-dark}
+
+\setbeamercolor{framesubtitle}{fg=uw-page-bg, bg=uw-page-bg}
+\setbeamercolor{author in head/foot}{fg=uw-gray-darkest, bg=uw-page-bg}
+\setbeamercolor{title in head/foot}{fg=uw-gray-darkest, bg=uw-page-bg}
+
+\setbeamercolor*{normal text}{fg=uw-gray-darkest, bg=uw-gray-blue}
+\setbeamercolor*{block body}{fg=uw-gray-darkest,bg=uw-page-bg}
+\setbeamercolor*{block title}{fg=uw-gray-footer-text-hover,bg=uw-red}
+\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamercolor{upper separation line head}{fg=uw-gray-darkest}
+
+\setbeamercolor*{example body}{fg=uw-body-font,bg=uw-page-bg}
+\setbeamercolor*{example text}{fg=uw-body-font,bg=uw-page-bg}
+\setbeamercolor*{example title}{bg=uw-red,fg=uw-gray-blue}
+\setbeamercolor*{alert body}{fg=uw-body-font,bg=uw-page-bg}
+\setbeamercolor*{alert text}{fg=uw-body-font,bg=uw-page-bg}
+\setbeamercolor*{alert title}{bg=uw-red,fg=uw-gray-blue}
+
+\setbeamercolor{bibliography item}{parent=uw-gray-darkest}
+\setbeamercolor*{bibliography entry title}{parent=uw-gray-darkest}
+\setbeamercolor*{bibliography entry author}{fg=uw-gray-darkest}
+\setbeamercolor*{bibliography entry journal}{fg=uw-gray-darkest}
+\setbeamercolor*{bibliography entry note}{fg=uw-gray-darkest}
+
+\setbeamercolor*{caption name}{fg=uw-gray-darkest}
+
+\setbeamercolor{alerted text}{fg=uw-body-font}
+
+\setbeamercolor{structure}{fg=uw-body-font}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.25\paperwidth}
+        \begin{center}
+          \includegraphics[height=8cm]{color-flush-UWlogo-print}
+        \end{center}
+        \vskip1ex
+      \end{column}
+      \begin{column}{.45\paperwidth}
+        \vskip4ex
+        \raggedleft
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}     
+      \end{column}
+      \begin{column}{0.05\paperwidth}
+      \end{column}
+      \begin{column}{.25\paperwidth}
+        \begin{center}
+          \insertlogo
+        \end{center}
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    
+    \texttt{\insertauspice}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Prevents the logo being printed in the default location
+\defbeamertemplate*{sidebar right}{sidebar theme}
+{%
+    \vfill%
+    \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+    \vskip2pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster"
+%%% End: 
