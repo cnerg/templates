@@ -3,4 +3,5 @@ This repo contains LaTeX templates that can be used for posters, papers, documen
 
 ## Branches
 
-List themes here and their branches
+### Thesis or Preliminary Document Themes
+* thesis-template-1
