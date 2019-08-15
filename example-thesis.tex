@@ -1,0 +1,51 @@
+\documentclass[12pt,oneside,letterpaper]{memoir}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\usepackage{lipsum}
+
+\usepackage[font={small,it}]{caption}
+\usepackage{algorithm, algorithmic}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{acro}
+\usepackage[margin=1.25in]{geometry}
+
+\input{includes/preamble}
+\input{includes/defs}
+\input{includes/thesisdefs}
+
+\clearpage\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
+
+\title{Title of your Dissertation}
+\author{Buckingham U. Badger}
+\department{Nuclear Engineering and Engineering Physics}
+
+\date{2025} % used on the copywrite page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+\begin{document}
+
+%%% Uncomment the following if your .bib contains references that you will not 
+%%% explicitly cite, but that should be in the final bibliography:
+% \nocite{*}
+
+\ifpdf
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+\else
+\DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+
+\maketitle
+
+\input{frontmatter/frontmatter}
+
+%% Now include the tex files for each chapter: 
+\input{content/intro/intro}
+\input{content/background/background}
+
+
+\bibliographystyle{ans}
+\bibliography{bibliography}
+
+\end{document}
