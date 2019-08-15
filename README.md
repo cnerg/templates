@@ -4,7 +4,12 @@ This repo contains LaTeX templates that can be used for posters, papers, documen
 ## Available Templates and Themes as Branches
 
 ### Thesis or Preliminary Document
-* `thesis-template-1`
+* `thesis-template-1`: use for prelim or thesis document.
 
 ### Posters
 * `poster-UW-CNERG-1`: uses both the CNERG and UW-Madison logos in a beamer slide template
+
+## Contributing
+To contribute a theme or template, add it as a separate branch with a branch name that is specific about what it's used for (e.g. poster) and some description of the theme (if any). The `README` for each branch should describe how the template or theme can be used. When a new branch is created, it should be listed in the `README` for the master branch under the appropriate section (e.g. poster, presentation, etc) with a brief description.
+
+Pull requests to update existing templates and themese are welcome.
