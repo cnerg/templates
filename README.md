@@ -8,4 +8,4 @@ The main document is `example-thesis.tex`. Content is located in `content/`.
 Frontmatter (such as acknowledgements and abstract) and backmatter located
 in appropriate folders.
 
-Adpated from: [https://github.com/willb/wi-thesis-template]
+Adapted from: [https://github.com/willb/wi-thesis-template]
