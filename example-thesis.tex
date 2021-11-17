@@ -39,29 +39,20 @@
   Committee Member 5, Title, Affiliation\\
   }
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \begin{document}
 
-%%% Uncomment the following if your .bib contains references that you will not
-%%% explicitly cite, but that should be in the final bibliography:
-% \nocite{*}
-
-% \ifpdf
-% \DeclareGraphicsExtensions{.pdf, .jpg, .tif}
-% \else
-% \DeclareGraphicsExtensions{.eps, .jpg}
-% \fi
-
 \maketitle
 
+%% If you do not want to include acknowledgements or dedication, go to
+%% frontmatter/frontmatter.tex to edit sections.
 \input{frontmatter/frontmatter}
 
-%% Now include the tex files for each chapter:
+%% Now include the tex files for each chapter/section:
 \input{content/intro/intro}
 \input{content/background/background}
 
+%% bibliography
 \bibliographystyle{ans}
 \bibliography{bibliography}
 
