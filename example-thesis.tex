@@ -18,32 +18,49 @@
 \clearpage\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
 
 \title{Title of your Dissertation}
-\author{Buckingham U. Badger}
-\department{Nuclear Engineering and Engineering Physics}
+\author{Buckingham U. Badger}  % your name here
+\department{Engineering Physics}
+\defensedate{2025-05-01}
+\date{2025}  % year used on the copywrite page
 
-\date{2025} % used on the copywrite page
+\degree{Doctor of Philosophy}  % Default is PhD
+\doctype{Dissertation}         % Default is dissertation, use "A Preliminary Report" for prelim
+
+\advisorname{Paul P.H. Wilson}
+\advisortitle{Professor}
+
+% Committee: one committee member per line ending with \\
+% include Name, Title, Department/Affiliation
+\committee{
+  Paul P.H. Wilson, Professor, Engineering Physics\\
+  Committee Member 2, Title, Affiliation\\
+  Committee Member 3, Title, Affiliation\\
+  Committee Member 4, Title, Affiliation\\
+  Committee Member 5, Title, Affiliation\\
+  }
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \begin{document}
 
-%%% Uncomment the following if your .bib contains references that you will not 
+%%% Uncomment the following if your .bib contains references that you will not
 %%% explicitly cite, but that should be in the final bibliography:
 % \nocite{*}
 
-\ifpdf
-\DeclareGraphicsExtensions{.pdf, .jpg, .tif}
-\else
-\DeclareGraphicsExtensions{.eps, .jpg}
-\fi
+% \ifpdf
+% \DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+% \else
+% \DeclareGraphicsExtensions{.eps, .jpg}
+% \fi
 
 \maketitle
 
 \input{frontmatter/frontmatter}
 
-%% Now include the tex files for each chapter: 
+%% Now include the tex files for each chapter:
 \input{content/intro/intro}
 \input{content/background/background}
-
 
 \bibliographystyle{ans}
 \bibliography{bibliography}
