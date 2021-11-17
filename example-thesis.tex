@@ -54,12 +54,10 @@
 \input{frontmatter/frontmatter}
 
 %% Now include the tex files for each chapter/section:
-\input{content/intro/intro}
-\input{content/background/background}
+\input{content/intro/intro.tex}
+\input{content/background/background.tex}
 
-%% bibliography
-\bibliographystyle{ans}
-\bibliography{bibliography}  % update this name if your bibliography file
-                             % is not called bibliography.bib
+% bibliography info located in backmatter
+\input{backmatter/backmatter.tex}
 
 \end{document}
