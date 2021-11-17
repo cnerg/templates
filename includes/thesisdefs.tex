@@ -42,13 +42,8 @@
 
 \renewcommand{\maketitle}{%
   \begin{titlepage}
-%-----------------------------------------------------------------------------
-% -- The thesis office doesn't like thanks on title page.  Put it in
-% -- the acknowledgments.  This is here so you don't have to change
-% -- your titlepage when converting from report style. -> from Purdue, but I
-%        left it here since it seems compatible with UW-Madison, Eric
-%-----------------------------------------------------------------------------
-    \def\thanks##1{\typeout{Warning: `thanks' deleted from thesis titlepage.}}
+    \begin{OnehalfSpace}
+
     \let\footnotesize\small \let\footnoterule\relax \setcounter{page}{1}
     \begin{center}
       {\textbf{\expandafter\expandafter{\@title}}} \\[\@thesistitlemedskip]
@@ -69,6 +64,8 @@
     \hspace*{-0.7in}Date of oral examination: \@defensedate \\[\@thesistitlemedskip]
     \hspace*{-0.7in}Thesis Committee:\\
     \showcommittee
+  \end{OnehalfSpace}
+
   \end{titlepage}
   \setcounter{footnote}{0}
   \setcounter{page}{1} %title page is NOT counted
@@ -197,6 +194,5 @@
   \null\vfil
   \begin{center}}
 \def\enddedication{\end{center}\par\vfil\newpage}
-
 
 \makeatother
