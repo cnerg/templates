@@ -17,29 +17,34 @@
 
 \clearpage\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EDIT THIS SECTION WITH YOUR INFO %%
+
+%% Your info
 \title{Title of your Dissertation}
 \author{Buckingham U. Badger}  % your name here
 \department{Engineering Physics}
 \defensedate{2025-05-01}
 \date{2025}  % year used on the copywrite page
 
+%% Degree type
 \degree{Doctor of Philosophy}  % Default is PhD
 \doctype{Dissertation}         % Default is dissertation, use "A Preliminary Report" for prelim
 
+%% Advisor information
 \advisorname{Paul P.H. Wilson}
 \advisortitle{Professor}
+\advisoraffiliation{Engineering Physics}
 
-% Committee: one committee member per line ending with \\
-% include Name, Title, Department/Affiliation
-\committee{
-  Paul P.H. Wilson, Professor, Engineering Physics\\
-  Committee Member 2, Title, Affiliation\\
-  Committee Member 3, Title, Affiliation\\
-  Committee Member 4, Title, Affiliation\\
-  Committee Member 5, Title, Affiliation\\
-  }
+%% Additional committee members
+%% Do not add advisor, advisor is added to list automatically
+\addcommittee{Member 1}{title 1}{Affiliation 1}
+\addcommittee{Member 2}{title 2}{Affiliation 2}
+\addcommittee{Member 3}{title 3}{Affiliation 3}
+\addcommittee{Member 4}{title 4}{Affiliation 4}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
 \maketitle

@@ -19,10 +19,20 @@
 \newcommand{\thesis}{\gdef\@doctype{A thesis}}
 \newcommand{\dissertation}{\gdef\@doctype{A dissertation}}
 \newcommand{\department}[1]{\gdef\@department{#1}}
-\newcommand{\committee}[1]{\gdef\@committee{#1}}
 \newcommand{\defensedate}[1]{\gdef\@defensedate{#1}}
 \newcommand{\advisorname}[1]{\gdef\@advisorname{#1}}
 \newcommand{\advisortitle}[1]{\gdef\@advisortitle{#1}}
+\newcommand{\advisoraffiliation}[1]{\gdef\@advisoraffiliation{#1}}
+
+\def\@committee{\@empty}
+\newcommand{\addcommittee}[3]{
+    \edef\@committee{\@committee\if\@committee\@empty\else\ \fi  \tabularnewline #1, #2, #3}
+}
+\newcommand{\showcommittee}{\begin{tabular}[t]{l}
+  \@advisorname, \@advisortitle, \@advisoraffiliation
+  \@committee
+\end{tabular}}
+
 
 \newenvironment{titlepage}
  {\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
@@ -58,7 +68,7 @@
     \end{center}
     \hspace*{-0.7in}Date of oral examination: \@defensedate \\[\@thesistitlemedskip]
     \hspace*{-0.7in}Thesis Committee:\\
-    \@committee
+    \showcommittee
   \end{titlepage}
   \setcounter{footnote}{0}
   \setcounter{page}{1} %title page is NOT counted
