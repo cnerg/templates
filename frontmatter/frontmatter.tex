@@ -8,9 +8,9 @@
 \copyrightpage
 
 % DEDICATION
-%\begin{dedication}
-%	\emph{Please insert your dedication here.}
-%\end{dedication}
+\begin{dedication}
+	\emph{\input{frontmatter/dedication.tex}}
+\end{dedication}
 
 %% BEGIN PAGESTYLE
 
@@ -27,12 +27,8 @@
 
 % ACKNOWLEDGMENTS
 \begin{acks}
-\input{frontmatter/acks}
+\input{frontmatter/acknowledgements.tex}
 \end{acks}
-
-\begin{dedication}
-\input{frontmatter/dedication}
-\end{dedication}
 
 % CONTENTS, TABLES, FIGURES
 \renewcommand{\printtoctitle}[1]{\chapter*{#1}}
@@ -59,13 +55,6 @@
 \renewcommand{\cftsectionleader}{} 
 \renewcommand{\cftchapterafterpnum}{\cftparfillskip} 
 \renewcommand{\cftsectionafterpnum}{\cftparfillskip} 
-
-% \captionnamefont{\small\sffamily} 
-% \captiontitlefont{\small\sffamily} 
-
-% \renewcommand{\contentsname}{contents}
-% \renewcommand{\listfigurename}{list of figures}
-% \renewcommand{\listtablename}{list of tables}
 
 \tableofcontents
 
