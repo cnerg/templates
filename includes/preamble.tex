@@ -1,114 +1,34 @@
 % preamble.tex -- packages to include
 
-\usepackage[font={small,it}]{caption}
-\usepackage{algorithm, algorithmic}
-\usepackage{subcaption}
-\usepackage{siunitx}
-\usepackage{acro}
+%% page/text formatting
 \usepackage[margin=1.25in]{geometry}
-
-%% Set line spacing
+\usepackage{hyperref}
 \usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{lmodern} %% Avoid ugly "Type 3" fonts
+\usepackage[LY1]{fontenc}
+\usepackage{tgpagella}
+\hypersetup{pdfborder = 0 0 0}
 
-%% List setup; the ``hanglist`` environment will allow you to have
-%% nicely-typeset enumerated lists (i.e. with the numbers hanging in
-%% the margins).  You need at least version 2.1 of enumitem.sty.  If
-%% you don't have enumitem installed at all, hanglist will just be an
-%% alias for enumerate.
-\IfFileExists{enumitem.sty}{%
-\usepackage[loadonly]{enumitem}[2007/06/30]%
-\newlist{hanglist}{enumerate}{1}%
-\setlist[hanglist]{label=\arabic*.}%
-\setlist[hanglist,1]{leftmargin=0pt}%
-}{%
-\newenvironment{hanglist}{\begin{enumerate}}{\end{enumerate}}%
-}
+%% figures, tables, captions
+\usepackage[font={small,it}]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{boxedminipage}
+\usepackage{booktabs}
 
-%% Comment out any of these that you don't want
+%% math
+\usepackage{siunitx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
-%\usepackage{theorem}
-\usepackage{hyperref}
 
-\IfFileExists{mathpartir.sty}{%
-\usepackage{mathpartir}%
-}{}
+%% acronyms and glossaries
+\usepackage{acro}
 
-%%%%% LISTINGS package and setup
-\IfFileExists{listings.sty}{%
-\usepackage{listings}%
-}{}
-
-
-
-%% Get rid of ugly borders around PDF hyperlinks (e.g. for cross-references, bib entries, or URLs)
-\hypersetup{pdfborder = 0 0 0}
-
-%% You want microtype.
-\IfFileExists{microtype.sty}{%
-\usepackage[protrusion=true,expansion=true]{microtype}%
-}{}
-
-%\pagestyle{thesisdraft}
-
-% Surround parts of graphics with box
-\usepackage{boxedminipage}
-
-%% booktabs (thx to Nate Rosenblum for bringing this beautiful package
-%% to my attention)
-\IfFileExists{booktabs.sty}{%
-\usepackage{booktabs}%
-}{}
-
-% This is now the recommended way for checking for PDFLaTeX:
-\usepackage{ifpdf}
-
-%% Avoid ugly "Type 3" fonts
-\usepackage{lmodern}
-\usepackage[LY1]{fontenc}
-
-%% Substitute your favorite serif and sans fonts here....
-\IfFileExists{tgpagella.sty}{%
-% TeX Gyre pagella, like Palatino
-\usepackage{tgpagella}%
-}{}
-
-\usepackage[LY1]{eulervm}
-
-\ifpdf
-\usepackage[pdftex]{graphicx}
-\else
-\usepackage{graphicx}
-\fi
-
-\usepackage{makeidx}
-\makeindex
-
-{\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[chapter]
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{define}[thm]{Definition}
-\newtheorem{exmpl}[thm]{Example}
-}
-{\theoremstyle{remark}
-\newtheorem{rmk}[thm]{Remark}
-}
-
-\newtheoremstyle{customsty1}
-{3pt}%
-{3pt}%
-{}% --- body font
-{}% --- indent amount
-{\bfseries}% --- Theorem head font
-{:}% --- Punctuation after head
-{.5em}% --- space after head
-{}% --- theorem head spec (can be left empty, meaning 'normal')
-
-% Define 'newtheorems' that use ``customsty1''
-{\theoremstyle{customsty1}
-}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% NB: the ``deposit'' chapter- and page- styles should conform to UW
 %%% requirements.  If you are producing a pretty version of your
