@@ -39,7 +39,7 @@ Adapted from: [https://github.com/willb/wi-thesis-template]
 
  - `ans.bst`: bibliography style following ANS standards
 
- - `makefile`: make the doc (NEED TO ADD ONE STILL)
+ - `makefile`: this is a starting makefile to create your document. Replace the first line in file with the name of your main document (sans `.tex`) if it is not `example-thesis.tex`, and update the second line with your bibliography file location if it is not in the default location. To use, simply type `make` into the command line (or `make all` or `make all-via-pdf`). All build and auxiliary files are put into a `build/` folder (that is already ignored by the `.gitignore`). A compiled copy of the pdf is placed into the main folder when it is done building. `make clean` will remove all files produced by the build process.
 
 Examples of chapters, sections, figures, etc. are included in the content folder.
 
