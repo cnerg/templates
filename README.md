@@ -60,7 +60,7 @@ Each required input currently has an example, but below is a description of each
 
  - `\defensedate{}`: date of oral exam (whether it is thesis defense or prelim)
 
- - `\date{}`: year of (defense used for copyright info)
+ - `\date{}`: year of that your degree will be granted (might not be the same year that you pass your oral exam depending on your date of depositing).
 
  - `\degree{}`: If you are earning a PhD, this should be "Doctor of Philosophy". If you are earning a masters or other degree, replace with the type of degree (eg, "Masters of Science").
 
