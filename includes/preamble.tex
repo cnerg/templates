@@ -18,7 +18,6 @@
 \usepackage{multirow} % make tables with merged rows or columns
 \usepackage{tabularx} % make tables
 \usepackage{booktabs} % better looking tables
-\usepackage[noabbrev, capitalize]{cleveref} % for clever referencing \cref{} without having to manually write the word "Figure", etc.
 
 %% math
 \usepackage{siunitx} % for formatting numbers and units
@@ -30,6 +29,9 @@
 
 %% acronyms and glossaries
 \usepackage{acro} % use acronyms
+
+% clever referencing package must be loaded LAST otherwise it will not work
+\usepackage[noabbrev, capitalize]{cleveref} % for clever referencing \cref{} without having to manually write the word "Figure", etc.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
