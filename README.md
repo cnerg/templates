@@ -35,7 +35,7 @@ Adapted from: [https://github.com/willb/wi-thesis-template]
 
     - `appendix.tex`: create an appendices in this file.
 
- - `content/`: content for all your technical chapters/sections/subsections. Feel free to whichever structure of files in this folder your heart desires. Any file you wish to include should be listed with `\input` in some other file, even if it is the main `example-thesis.tex` file.
+ - `content/`: content for all your technical chapters/sections/subsections. Feel free to use whichever structure of files in this folder your heart desires. Any file you wish to include should be listed with `\input` in some other file, even if it is the main `example-thesis.tex` file.
 
  - `ans.bst`: bibliography style following ANS standards
 
@@ -56,7 +56,7 @@ Each required input currently has an example, but below is a description of each
 
  - `\author{}`: Replace with your name, or the name of the person who wrote your dissertation for you (jk, it should be your name if you want the degree).
 
- - `department{}`: your department name excluding "Department of." For example, if you were in the Department of Engineering Physics, put "Engineering Physics" (sans quotes) for this.
+ - `\department{}`: your department name excluding "Department of." For example, if you were in the Department of Engineering Physics, put "Engineering Physics" (sans quotes) for this.
 
  - `\defensedate{}`: date of oral exam (whether it is thesis defense or prelim)
 
@@ -64,7 +64,7 @@ Each required input currently has an example, but below is a description of each
 
  - `\degree{}`: If you are earning a PhD, this should be "Doctor of Philosophy". If you are earning a masters or other degree, replace with the type of degree (eg, "Masters of Science").
 
- - `\dissertation` or `\prelim` or `\masters`: Must include one of these to specify what type of report this is. For a PhD dissertation, use `\disseration`. For a prelim use `\prelim` for a masters thesis, use `\masters`.
+ - `\dissertation` or `\prelim` or `\masters`: Must include one of these to specify what type of report this is. For a PhD dissertation, use `\disseration`. For a prelim use `\prelim`. For a masters thesis, use `\masters`.
 
  - `\advisorname{}`, `\advisortitle{}`, `\advisoraffiliation{}`: If your advisor is Paul Wilson, then this is already pre-populated for you. If your advisor is someone else, then replace the inputs with your advisor's name, title, and affiliation, respectively.
 
