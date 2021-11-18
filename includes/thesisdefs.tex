@@ -18,6 +18,7 @@
 \newcommand{\prelim}{\gdef\@doctype{A preliminary report}}
 \newcommand{\dissertation}{\gdef\@doctype{Dissertation}}
 \newcommand{\department}[1]{\gdef\@department{#1}}
+\newcommand{\program}[1]{\gdef\@program{#1}}
 \newcommand{\defensedate}[1]{\gdef\@defensedate{#1}}
 \newcommand{\advisorname}[1]{\gdef\@advisorname{#1}}
 \newcommand{\advisortitle}[1]{\gdef\@advisortitle{#1}}
@@ -52,7 +53,8 @@
 
       \@doctype\ submitted in partial fulfillment of \\
       the requirements for the degree of\\[\@thesistitlemedskip]
-      \@degree \\
+      \@degree \\[\@thesistitlemedskip]
+
       in \\
       \@program \\[\@thesistitlemedskip]
 

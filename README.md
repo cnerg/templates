@@ -56,13 +56,15 @@ Each required input currently has an example, but below is a description of each
 
  - `\author{}`: Replace with your name, or the name of the person who wrote your dissertation for you (jk, it should be your name if you want the degree).
 
- - `\department{}`: your department name excluding "Department of." For example, if you were in the Department of Engineering Physics, put "Engineering Physics" (sans quotes) for this.
-
  - `\defensedate{}`: date of oral exam (whether it is thesis defense or prelim)
 
  - `\date{}`: year of that your degree will be granted (might not be the same year that you pass your oral exam depending on your date of depositing).
 
  - `\degree{}`: If you are earning a PhD, this should be "Doctor of Philosophy". If you are earning a masters or other degree, replace with the type of degree (eg, "Masters of Science").
+
+ - `\program{}`: the name of your program (likely different than the name of your department).
+
+ - `\department{}`: your department name excluding "Department of." For example, if you were in the Department of Engineering Physics, put "Engineering Physics" (sans quotes) for this.
 
  - `\dissertation` or `\prelim` or `\masters`: Must include one of these to specify what type of report this is. For a PhD dissertation, use `\disseration`. For a prelim use `\prelim`. For a masters thesis, use `\masters`.
 
