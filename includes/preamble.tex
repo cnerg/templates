@@ -1,32 +1,35 @@
 % preamble.tex -- packages to include
 
 %% page/text formatting
-\usepackage[margin=1.0in]{geometry}
-\usepackage{hyperref}
-\usepackage{setspace}
-\usepackage{enumitem}
-\usepackage{lmodern} %% Avoid ugly "Type 3" fonts
-\usepackage[LY1]{fontenc}
-\usepackage{tgpagella}
-\hypersetup{pdfborder = 0 0 0}
+\usepackage[margin=1.0in]{geometry} % page size, formatting. 1.0 inch margins are required by the guidelines
+\usepackage{hyperref} % makes clickable links and references
+\usepackage{setspace} % allows setting single, 1.5, or double spacing for lines
+\usepackage{enumitem} % allows enumeration such as numbered or bulleted lists
+\usepackage{lmodern} % fonts
+\usepackage[LY1]{fontenc} % fonts
+\usepackage{tgpagella} % fonts
+\hypersetup{pdfborder = 0 0 0} % removes boxes around clickable things
 
-%% figures, tables, captions
-\usepackage[font={small,it}]{caption}
-\usepackage{subcaption}
-\usepackage{graphicx}
-\usepackage{boxedminipage}
-\usepackage{booktabs}
+%% floats: figures, tables, captions
+\usepackage[font={small,it}]{caption} % captions on floats. Formatting is set for italicized and smaller font
+\usepackage{subcaption} % allows subfigures/subfloats
+\usepackage{graphicx} % for including graphics/images
+\usepackage{boxedminipage} % for using minipages
+\usepackage{multirow} % make tables with merged rows or columns
+\usepackage{tabularx} % make tables
+\usepackage{booktabs} % better looking tables
+\usepackage[noabbrev, capitalize]{cleveref} % for clever referencing \cref{} without having to manually write the word "Figure", etc.
 
 %% math
-\usepackage{siunitx}
-\usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
+\usepackage{siunitx} % for formatting numbers and units
+\usepackage{algorithm} % for formatting algorithms/psuedocode
+\usepackage{algorithmic} % also formatting algs
+\usepackage{amssymb} % math symbols
+\usepackage{amsmath} % write math equations
+\usepackage{amsthm} % can write math theorem type of things
 
 %% acronyms and glossaries
-\usepackage{acro}
+\usepackage{acro} % use acronyms
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
