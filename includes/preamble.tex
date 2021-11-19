@@ -5,9 +5,9 @@
 \usepackage{hyperref} % makes clickable links and references
 \usepackage{setspace} % allows setting single, 1.5, or double spacing for lines
 \usepackage{enumitem} % allows enumeration such as numbered or bulleted lists
-\usepackage{lmodern} % fonts
-\usepackage[LY1]{fontenc} % fonts
-\usepackage{tgpagella} % fonts
+%\usepackage{lmodern} % fonts
+%\usepackage[LY1]{fontenc} % fonts
+%\usepackage{tgpagella} % fonts
 \hypersetup{pdfborder = 0 0 0} % removes boxes around clickable things
 
 %% floats: figures, tables, captions
@@ -40,16 +40,14 @@
 %%% dissertation for web use later, you will certainly want to make
 %%% your own chapter and page styles.
 
-\makechapterstyle{deposit}{%
+\makechapterstyle{deposit}{
+  \renewcommand{\cftchapterfont}{\normalfont}
+  \renewcommand{\cftsectionfont}{\itshape}
+  \renewcommand{\cftchapterpagefont}{\normalfont}
+  \renewcommand{\cftchapterpresnum}{\bfseries}
+  \renewcommand{\cftchapterafterpnum}{\cftparfillskip}
+  \renewcommand{\cftsectionafterpnum}{\cftparfillskip}
   \renewcommand{\chapterheadstart}{}
-  \renewcommand{\printchaptername}{}
-  \renewcommand{\chapternamenum}{}
-  \renewcommand{\printchapternum}{\parbox{2em}{\MakeLowercase{\Large\scshape\thechapter{}}} }
-  \renewcommand{\afterchapternum}{}
-  \renewcommand{\printchaptertitle}[1]{%
-  \raggedright\Large\scshape\MakeLowercase{##1}}
-  \renewcommand{\afterchaptertitle}{%
-  \vskip\onelineskip \hrule\vskip\onelineskip}
 }
 
 \makepagestyle{deposit}
