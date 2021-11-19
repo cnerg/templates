@@ -11,7 +11,7 @@ quick: $(manuscript).tex
 all-via-pdf: $(manuscript).tex
 	mkdir -p build
 	pdflatex $(latexopt) $(manuscript)
-	# makeglossaries -d build $(manuscript)
+	makeglossaries -d build $(manuscript)
 	bibtex build/$(manuscript)
 	pdflatex $(latexopt) $(manuscript)
 	pdflatex $(latexopt) $(manuscript)
