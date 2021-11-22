@@ -12,10 +12,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% EDIT THIS SECTION WITH YOUR INFO %%
 
-%% Use double spacing for depositing dissertation
-%% other options: \OnehalfSpacing, \SingleSpacing
-\DoubleSpacing
-
 %% Your info
 \title{Title of your Dissertation}
 \author{Buckingham U. Badger}  % your name here
@@ -56,6 +52,12 @@
 %% If you do not want to include acknowledgements or dedication, go to
 %% frontmatter/frontmatter.tex to edit sections.
 \input{frontmatter/frontmatter}
+
+%% Use double spacing for depositing dissertation
+%% other options: \OnehalfSpacing, \SingleSpacing
+%% keep this after the frontmatter input above if you don't want those to
+%% stay single spaced
+\DoubleSpacing
 
 %% Now include the tex files for each chapter/section:
 \input{content/intro/intro.tex}
