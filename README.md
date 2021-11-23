@@ -6,7 +6,7 @@ Adapted from: [https://github.com/willb/wi-thesis-template]
 
 ## File Structure:
 
- - `example-thesis.tex`: This is the main LaTeX file that points to all other information. This files is meant to be edited. See below for specific inputs for this file.
+ - `example-thesis.tex`: This is the main LaTeX file that points to all other information. This file is meant to be edited. See below for specific inputs for this file.
 
  - `includes/`: contains all information related to formatting and settings for the document
 
@@ -26,20 +26,19 @@ Adapted from: [https://github.com/willb/wi-thesis-template]
 
     - `abstract.tex`: Write your abstract here.
 
-
  - `backmatter/`: this folder contains all info that may appear at the end of your document.
 
     - `backmatter.tex`: bibliography style is set here and bibliography is created. If your `.bib` file is named something other than `bibiliography.bib` and/or not located in the `backmatter/` folder, then that line needs to be edited. If you do not have an appendix to include, the input line for the appendix should also be removed. If you have more than one appendix, you can make additional `\input` calls here.
 
     - `bibliography.bib`: bibtex file
 
-    - `appendix.tex`: create an appendices in this file.
+    - `appendix.tex`: create or include any appendices in this file.
 
  - `content/`: content for all your technical chapters/sections/subsections. Feel free to use whichever structure of files in this folder your heart desires. Any file you wish to include should be listed with `\input` in some other file, even if it is the main `example-thesis.tex` file.
 
  - `ans.bst`: bibliography style following ANS standards
 
- - `makefile`: this is a starting makefile to create your document. Replace the first line in file with the name of your main document (sans `.tex`) if it is not `example-thesis.tex`, and update the second line with your bibliography file location if it is not in the default location. To use, simply type `make` into the command line (or `make all` or `make all-via-pdf`). All build and auxiliary files are put into a `build/` folder (that is already ignored by the `.gitignore`). A compiled copy of the pdf is placed into the main folder when it is done building. `make clean` will remove all files produced by the build process.
+ - `makefile`: this is a starting makefile to create your document. Replace the first line in this file with the name of your main document (sans `.tex`) if it is not `example-thesis.tex`, and update the second line with your bibliography file location if it is not in the default location. To use, simply type `make` into the command line (or `make all` or `make all-via-pdf`). All build and auxiliary files are put into a `build/` folder (that is already ignored by the `.gitignore`). A compiled copy of the pdf is placed into the main folder when it is done building. `make clean` will remove all files produced by the build process.
 
 Examples of chapters, sections, figures, etc. are included in the content folder.
 
