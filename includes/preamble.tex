@@ -1,160 +1,61 @@
 % preamble.tex -- packages to include
-%
-% Wisconsin dissertation template
-% Copyright (c) 2008 William C. Benton.  All rights reserved.
-%
-% This program can redistributed and/or modified under the terms
-% of the LaTeX Project Public License Distributed from CTAN
-% archives in directory macros/latex/base/lppl.txt; either
-% version 1 of the License, or (at your option) any later version.
-%
-% This program includes other software that is licensed under the
-% terms of the LPPL and the Perl Artistic License; see README for details.
-%
-% You, the user, still hold the copyright to any document you produce
-% with this software (like your dissertation).
 
-%% You should use natbib
-%\IfFileExists{natbib.sty}{%
-%\usepackage[numbers,sort&compress]{natbib}
-%%\usepackage{natbib}%
-%}{}
+%% page/text formatting
+\usepackage[margin=1.0in]{geometry} % page size, formatting. 1.0 inch margins are required by the guidelines
+\usepackage{hyperref} % makes clickable links and references
+\usepackage{setspace} % allows setting single, 1.5, or double spacing for lines
+\usepackage{enumitem} % allows enumeration such as numbered or bulleted lists
+\hypersetup{pdfborder = 0 0 0} % removes boxes around clickable things
 
-%% You probably need appendix, if you want appendices
-\IfFileExists{appendix.sty}{%
-\usepackage{appendix}%
-}{}
+%% floats: figures, tables, captions
+\usepackage[font={small,it}]{caption} % captions on floats. Formatting is set for italicized and smaller font
+\usepackage{subcaption} % allows subfigures/subfloats
+\usepackage{graphicx} % for including graphics/images
+\usepackage{boxedminipage} % for using minipages
+\usepackage{multirow} % make tables with merged rows or columns
+\usepackage{tabularx} % make tables
+\usepackage{booktabs} % better looking tables
 
-%% the spacing in memoir is weird, you'll need to use this
-\DisemulatePackage{setspace}
-\usepackage[onehalfspacing]{setspace}
+%% math
+\usepackage{siunitx} % for formatting numbers and units
+\usepackage{algorithm} % for formatting algorithms/psuedocode
+\usepackage{algorithmic} % also formatting algs
+\usepackage{amssymb} % math symbols
+\usepackage{amsmath} % write math equations
+\usepackage{amsthm} % can write math theorem type of things
 
-%\usepackage{geometry}
+%% acronyms and glossaries
+\usepackage{glossaries}
+\glstoctrue
+\makeglossaries
 
-%% List setup; the ``hanglist`` environment will allow you to have
-%% nicely-typeset enumerated lists (i.e. with the numbers hanging in
-%% the margins).  You need at least version 2.1 of enumitem.sty.  If
-%% you don't have enumitem installed at all, hanglist will just be an
-%% alias for enumerate.
-\IfFileExists{enumitem.sty}{%
-\usepackage[loadonly]{enumitem}[2007/06/30]%
-\newlist{hanglist}{enumerate}{1}% 
-\setlist[hanglist]{label=\arabic*.}%
-\setlist[hanglist,1]{leftmargin=0pt}%
-}{%
-\newenvironment{hanglist}{\begin{enumerate}}{\end{enumerate}}%
-}
+% clever referencing package must be loaded LAST otherwise it will not work
+\usepackage[noabbrev, capitalize]{cleveref} % for clever referencing \cref{} without having to manually write the word "Figure", etc.
 
-%% Comment out any of these that you don't want
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-%\usepackage{theorem}
-\usepackage{hyperref}
-
-\IfFileExists{mathpartir.sty}{%
-\usepackage{mathpartir}%
-}{}
-
-%%%%% LISTINGS package and setup
-\IfFileExists{listings.sty}{%
-\usepackage{listings}%
-}{}
-
-
-
-%% Get rid of ugly borders around PDF hyperlinks (e.g. for cross-references, bib entries, or URLs)
-\hypersetup{pdfborder = 0 0 0}
-
-%% You want microtype.
-\IfFileExists{microtype.sty}{%
-\usepackage[protrusion=true,expansion=true]{microtype}%
-}{}
-
-%\pagestyle{thesisdraft}
-
-% Surround parts of graphics with box
-\usepackage{boxedminipage}
-
-%% booktabs (thx to Nate Rosenblum for bringing this beautiful package
-%% to my attention)
-\IfFileExists{booktabs.sty}{%
-\usepackage{booktabs}%
-}{}
-
-% This is now the recommended way for checking for PDFLaTeX:
-\usepackage{ifpdf}
-
-%% Avoid ugly "Type 3" fonts
-\usepackage{lmodern}
-\usepackage[LY1]{fontenc}
-
-%% Substitute your favorite serif and sans fonts here....
-\IfFileExists{tgpagella.sty}{%
-% TeX Gyre pagella, like Palatino
-\usepackage{tgpagella}%
-}{}
-
-\usepackage[LY1]{eulervm}
-
-\ifpdf
-\usepackage[pdftex]{graphicx}
-\else
-\usepackage{graphicx}
-\fi
-
-\usepackage{makeidx}
-\makeindex
-
-{\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[chapter]
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{define}[thm]{Definition}
-\newtheorem{exmpl}[thm]{Example}
-}
-{\theoremstyle{remark}
-\newtheorem{rmk}[thm]{Remark}
-}
-
-\newtheoremstyle{customsty1}
-{3pt}%
-{3pt}%
-{}% --- body font
-{}% --- indent amount
-{\bfseries}% --- Theorem head font
-{:}% --- Punctuation after head
-{.5em}% --- space after head
-{}% --- theorem head spec (can be left empty, meaning 'normal')
-
-% Define 'newtheorems' that use ``customsty1''
-{\theoremstyle{customsty1} 
-}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% NB: the ``deposit'' chapter- and page- styles should conform to UW
 %%% requirements.  If you are producing a pretty version of your
 %%% dissertation for web use later, you will certainly want to make
 %%% your own chapter and page styles.
 
-\makechapterstyle{deposit}{%
+\makechapterstyle{deposit}{
+  \renewcommand{\cftchapterfont}{\normalfont}
+  \renewcommand{\cftsectionfont}{\itshape}
+  \renewcommand{\cftchapterpagefont}{\normalfont}
+  \renewcommand{\cftchapterpresnum}{\bfseries}
+  \renewcommand{\cftchapterafterpnum}{\cftparfillskip}
+  \renewcommand{\cftsectionafterpnum}{\cftparfillskip}
   \renewcommand{\chapterheadstart}{}
-  \renewcommand{\printchaptername}{}
-  \renewcommand{\chapternamenum}{}
-  \renewcommand{\printchapternum}{\parbox{2em}{\MakeLowercase{\Large\scshape\thechapter{}}} }
-  \renewcommand{\afterchapternum}{}
-  \renewcommand{\printchaptertitle}[1]{%
-  \raggedright\Large\scshape\MakeLowercase{##1}}
-  \renewcommand{\afterchaptertitle}{%
-  \vskip\onelineskip \hrule\vskip\onelineskip}
 }
 
 \makepagestyle{deposit}
- 
+
 \makeatletter
- 
+
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
- 
+
 \makeevenfoot{deposit}{}{}{}
 \makeoddfoot{deposit}{}{}{}
 \makeevenhead{deposit}{\thepage}{}{}
@@ -168,28 +69,3 @@
 \makeoddfoot{chapter}{}{}{}
 \makeevenhead{chapter}{\thepage}{}{}
 \makeoddhead{chapter}{}{}{\thepage}
-%%% SNIP
-
-%%% bib nonsense
-\makeatletter
-\newenvironment{wb-bib}[1]{%
-  \chapter*{references}
-\ifnobibintoc\else 
-\phantomsection 
-\addcontentsline{toc}{chapter}{References} 
-\fi 
-\prebibhook
-  \begin{bibitemlist}{#1}}{\end{bibitemlist}\postbibhook}
-
-\AtBeginDocument{%
-  \@ifpackageloaded{natbib}{% natbib is loaded
-    \addtodef{\endthebibliography}{}{\vskip-\lastskip\postbibhook}
-    \@ifpackagewith{natbib}{sectionbib}{% with sectionbib option
-      \renewcommand{\bibsection}{\@memb@bsec}}%
-      {\renewcommand{\bibsection}{\@memb@bchap}}}%
-  {}
-  \@ifpackagewith{chapterbib}{sectionbib}{%
-    \renewcommand{\sectionbib}[2]{}
-    \renewcommand{\bibsection}{\@memb@bsec}}{}
-}
-\makeatother

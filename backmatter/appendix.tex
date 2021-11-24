@@ -1,0 +1,17 @@
+%% include multiple appendices by using multiple chapters
+\appendix  % starts the appendix. Anything after this will be considered appendix
+
+% deposit requirements are that appendices are numbered, not lettered.
+\renewcommand{\thechapter}{\Roman{chapter}} % labels them by roman numerals instead of letters.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Title of first appendix}
+
+Use the appendix for all the extra data and such.
+These will automatically be called an ``Appendix" so you can use a more specific title for each.
+
+\chapter{Another appendix}
+
+Example of a second appendix.
+Formatting requirements say that appendices should be numbered but they are allowed to be single spaced.

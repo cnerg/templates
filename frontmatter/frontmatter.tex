@@ -1,33 +1,25 @@
-\svnidlong{$LastChangedBy$}{$LastChangedRevision$}{$LastChangedDate$}{$HeadURL: http://freevariable.com/dissertation/branches/diss-template/frontmatter/frontmatter.tex $}
-\vcinfo{}
-%
-%%% SOME OF THIS CODE IS ADAPTED FROM THE VENERABLE withesis.cls
-
 % COPYRIGHT PAGE
 %  - To include a copyright page use \copyrightpage
 \copyrightpage
 
-% DEDICATION
-%\begin{dedication}
-%	\emph{Please insert your dedication here.}
-%\end{dedication}
+% DEDICATION  !! Comment this out if you want to remove dedication
+\begin{dedication}
+	\emph{\input{frontmatter/dedication.tex}}
+\end{dedication}
 
 %% BEGIN PAGESTYLE
-
 %%% You can pick a pagestyle if you want; see the memoir class
 %%% documentation for more info.  The default ``deposit'' option meets
 %%% the UW thesis typesetting requirements but is probably
 %%% unsatisfactory for making a version of your dissertation that
 %%% won't be deposited to the graduate school (e.g. for web or a nice
 %%% printed copy)
-
 \chapterstyle{deposit}
 \pagestyle{deposit}
 
-
-% ACKNOWLEDGMENTS
+% ACKNOWLEDGMENTS  !! Comment this section out if you want to remove acknowledgements
 \begin{acks}
-\input{frontmatter/acks}
+\input{frontmatter/acknowledgements.tex}
 \end{acks}
 
 % CONTENTS, TABLES, FIGURES
@@ -47,21 +39,14 @@
 \renewcommand{\afterloftitle}{}
 \renewcommand{\afterlottitle}{}
 
-\renewcommand{\cftchapterfont}{\normalfont} 
-\renewcommand{\cftsectionfont}{\itshape} 
-\renewcommand{\cftchapterpagefont}{\normalfont} 
-\renewcommand{\cftchapterpresnum}{\bfseries} 
-\renewcommand{\cftchapterleader}{} 
-\renewcommand{\cftsectionleader}{} 
-\renewcommand{\cftchapterafterpnum}{\cftparfillskip} 
-\renewcommand{\cftsectionafterpnum}{\cftparfillskip} 
-
-% \captionnamefont{\small\sffamily} 
-% \captiontitlefont{\small\sffamily} 
-
-% \renewcommand{\contentsname}{contents}
-% \renewcommand{\listfigurename}{list of figures}
-% \renewcommand{\listtablename}{list of tables}
+\renewcommand{\cftchapterfont}{\normalfont}
+\renewcommand{\cftsectionfont}{\itshape}
+\renewcommand{\cftchapterpagefont}{\normalfont}
+\renewcommand{\cftchapterpresnum}{\bfseries}
+\renewcommand{\cftchapterafterpnum}{\cftparfillskip}
+\renewcommand{\cftsectionafterpnum}{\cftparfillskip}
+\renewcommand{\cftsubsectionafterpnum}{\cftparfillskip}
+\renewcommand{\cftsubsubsectionafterpnum}{\cftparfillskip}
 
 \tableofcontents
 
@@ -71,11 +56,9 @@
 \clearpage
 \listoffigures
 
-% add list of acronyms here
 \clearpage
-\begin{nomenclature}
-\printacronyms[heading=none] %[include-classes=abbrev]
-\end{nomenclature}
+\input{frontmatter/acronyms}
+\printglossary[title={Nomenclature}, nonumberlist, nopostdot]
 
 \clearpage
 
