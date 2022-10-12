@@ -5,6 +5,7 @@ This repo contains LaTeX templates that can be used for posters, papers, documen
 
 ### Thesis or Preliminary Document
 * `thesis-template-1`: use for prelim or thesis document.
+* `thesis-one-page-summary-1`: to make one page summary document to be shared with committee members, sponsors, or anyone else that asks for a quick summary of your thesis.
 
 ### Posters
 * `poster-UW-CNERG-1`: uses both the CNERG and UW-Madison logos in a beamer slide template
