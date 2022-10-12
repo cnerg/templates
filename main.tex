@@ -1,0 +1,101 @@
+\documentclass[10pt,a4paper]{onepager}
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=1cm}
+
+% If using pdflatex:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage{xspace}
+\usepackage{lipsum}
+
+% If using xelatex or lualatex:
+% \setmainfont{Lato}
+
+% Change the colours if you want to
+% they're currently based on UW colors
+\definecolor{Bright}{HTML}{c5050c}
+\definecolor{DkRed}{HTML}{9b0000}
+\definecolor{Black}{HTML}{111111}
+\definecolor{DkGrey}{HTML}{282728}
+\definecolor{LightGrey}{HTML}{494949}
+\colorlet{heading}{Bright}
+\colorlet{accent}{DkGrey}
+\colorlet{emphasis}{Black}
+\colorlet{body}{LightGrey}
+
+%% references.bib is empty, fill it and uncomment below if you need references
+%\addbibresource{references.bib}
+
+\begin{document}
+\name{FULL DISSERTATION TITLE GOES HERE}
+\tagline{Summary of dissertation proposal} % or subtitle if you have one and that works better
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% change file below if you want a different logo, like the CNERG one or a general UW one
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\logo{5.5cm}{"ENGIPHYS_color-center"}
+
+
+\docinfo{%
+  \madeby{NAME NAME}{EMAIL@wisc.edu, OTHER EMAILS}{DATE} %\today if you want to always update
+}
+
+\purpose{
+    \lipsum[1]
+} % add a short abstract
+
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makeheader
+\end{fullwidth}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \need.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \need title in the "main" bar.
+\side[sidebar]{Proposed Chapters}
+
+\step{1}{CHAPTER ONE TITLE}{XX weeks}
+This chapter demonstrates \lipsum[1][1-6]
+
+\divider
+
+\step{2}{CHAPTER ONE TITLE}{xx months}
+Previous literature has \lipsum[1][7-18]
+
+\divider
+
+\step{3}{CHAPTER THREE TITLE}{XX months}
+
+This chapter enhances \lipsum[2][1-14]
+ 
+\divider
+ 
+\step{5}{Demonstration and Summary}{XX weeks}
+
+Each of the above chapters contributes \lipsum[3]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% if you want another page with more stuff, start uncommenting below as needed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pagebreak
+%\clearpage
+
+%\need[otherinfo]{Other Stuff}
+
+%\nocite{*}
+
+%\printbibliography
+
+%\divider
+
+%% If the NEXT page doesn't start with a \side but you'd
+%% still like to add a sidebar, then use this command on THIS
+%% page to add it. The optional argument lets you pull up the
+%% sidebar a bit so that it looks aligned with the top of the
+%% main column.
+% \addnextpagesidebar[-1ex]{page3sidebar}
+
+\end{document}

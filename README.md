@@ -1,15 +1,11 @@
-# Document Templates
-This repo contains LaTeX templates that can be used for posters, papers, documents, etc. Each branch is its own theme or template that can be taken and used as necessary.
+# Thesis One-Page Summary Template
 
-## Available Templates and Themes as Branches
+This branch is a template for a one-page summary document that can be used to succinctly introduce your dissertation topic. You can replace the UW Engineering Physics logo with the CNERG logo, or upload your own
 
-### Thesis or Preliminary Document
-* `thesis-template-1`: use for prelim or thesis document.
+## File Structure
 
-### Posters
-* `poster-UW-CNERG-1`: uses both the CNERG and UW-Madison logos in a beamer slide template
+* `main.tex` includes the text to be updated, including your name and dissertation title, but all the short paragraphs about your dissertation. The colors can also easily be changed from this file.
 
-## Contributing
-To contribute a theme or template, add it as a separate branch with a branch name that is specific about what it's used for (e.g. poster) and some description of the theme (if any). The `README` for each branch should describe how the template or theme can be used. When a new branch is created, it should be listed in the `README` for the master branch under the appropriate section (e.g. poster, presentation, etc) with a brief description.
+## Updating this template:
 
-Pull requests to update existing templates and themese are welcome.
+Discover a better way to do something or want to update this template? Make a PR.
