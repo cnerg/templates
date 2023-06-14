@@ -1,0 +1,191 @@
+\ProvidesPackage{beamerthemeWisconsin}
+
+% Adapted from the University of Oregon theme (http://ix.cs.uoregon.edu/~peter/uotheme/)
+% and also from some mangled pieces of the default theme.  That probably puts this under
+% GPLv2.
+% Adapted further by Katie Mummah
+
+\usepackage{tabularx}
+
+%% The options for this template
+
+% If this option [nav] is present, include the navigation buttons in
+% the lower right corner.  The default is no navigation buttons
+\newif\ifbeamer@nav
+\beamer@navfalse
+\DeclareOptionBeamer{nav}{\beamer@navtrue}
+
+% Use a more standard black-on-white scheme.  The option [white] is
+% not enabled by default.
+\newif\ifbeamer@white
+\beamer@whitefalse
+\DeclareOptionBeamer{white}{\beamer@whitetrue}
+
+% If the option [nologo] is provided, the UW logo on the right side of
+% the slide title is suppressed.  The logo is on by default.
+\newif\ifbeamer@nologo
+\beamer@nologofalse
+\DeclareOptionBeamer{nologo}{\beamer@nologotrue}
+
+% If the option [cnerglogo] is provided, both the UW and CNERG logos will be provided on the right side of the slide title
+\newif\ifbeamer@cnerglogo
+\beamer@cnerglogofalse
+\DeclareOptionBeamer{cnerglogo}{\beamer@cnerglogotrue}
+
+% If the option [cnergonlylogo] is provided, only the CNERG logo will 
+% be on the right side of the slide title
+\newif\ifbeamer@cnergonlylogo
+\beamer@cnergonlylogofalse
+\DeclareOptionBeamer{cnergonlylogo}{\beamer@cnergonlylogotrue}
+
+% The default logo has the crest above the university name, which uses
+% a lot of vertical room.  For a more 'compact' look, use the
+% [compactlogo] option.
+\newif\ifbeamer@compactlogo
+\beamer@compactlogofalse
+\DeclareOptionBeamer{compactlogo}{\beamer@compactlogotrue}
+
+% The option [sections] shows the current section name under the slide
+% title.  There are no sections shown by default.
+\newif\ifbeamer@sections
+\beamer@sectionsfalse
+\DeclareOptionBeamer{sections}{\beamer@sectionstrue}
+
+% The option [noslidenumbers] suppresses the display of slide numbers.
+% Slide numbers are shown by default
+\newif\ifbeamer@noslidenumbers
+\beamer@noslidenumbersfalse
+\DeclareOptionBeamer{noslidenumbers}{\beamer@noslidenumberstrue}
+
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+%% Set up the logos used in the theme
+% This is the logo that goes in the upper right corner, in the frametitle.
+%\logo{\includegraphics[height=0.6cm]{UW_crest.pdf}}
+\ifbeamer@cnerglogo
+    \logo{\includegraphics[height=0.6cm]{UW_crest.pdf}\includegraphics[height=0.6cm]{cnerg_logo_square_white_transparent.png}}
+\else
+    \ifbeamer@cnergonlylogo
+        \logo{\includegraphics[height=0.6cm]{cnerg_logo_square_white_transparent.png}}
+    \else
+        \logo{\includegraphics[height=0.6cm]{UW_crest.pdf}}
+    \fi
+\fi
+
+% This logo appears below the date on the title page.
+\ifbeamer@compactlogo
+  \ifbeamer@white
+    \titlegraphic{\includegraphics[height=1.7cm]{UW_main_compact_white.pdf}}
+  \else
+    \titlegraphic{\includegraphics[height=1.7cm]{UW_main_compact.pdf}}
+  \fi
+\else
+  \ifbeamer@white
+    \titlegraphic{\includegraphics[height=2.4cm]{UW_main_white.pdf}}
+  \else
+    \titlegraphic{\includegraphics[height=2.4cm]{UW_main.pdf}}
+  \fi
+\fi
+
+\setbeamertemplate{frametitle}[default][center]
+% Removes the logo from the lower right so that we can place it less obtrusively
+\defbeamertemplate*{sidebar right}{uwisconsin theme}
+{
+  \vfill%
+  \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+  \vskip2pt%
+}
+
+\newcommand{\frameTitleAndSection}[0]{
+  \ifbeamer@sections
+    \parbox{3in}{\insertframetitle \\ \tiny\usebeamercolor[fg]{section text}\insertsectionhead}
+  \else
+    \insertframetitle
+  \fi
+}
+
+\ifbeamer@noslidenumbers
+\else
+\useoutertheme{subtle}
+\fi
+
+\useoutertheme[footline=empty,subsection=false]{miniframes}
+% Redefine the frameheader to include a logo
+\defbeamertemplate*{frametitle}{uwisconsin theme}[1][left]
+{
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \begin{beamercolorbox}[sep=0.32cm,#1,wd=\the\@tempdima]{frametitle}
+    \usebeamerfont{frametitle}%
+    \vbox{}\vskip-2.1ex%
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+    \begin{tabularx}{.95\@tempdima}{lXr}
+      \ifbeamer@nologo
+        \frameTitleAndSection & &
+      \else
+        \frameTitleAndSection & & \raisebox{-5pt}\insertlogo
+      \fi
+    \end{tabularx}\par%
+    {%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+      \fi
+    }%
+    \vskip-1ex%
+    \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+  \end{beamercolorbox}%
+}
+
+
+\useinnertheme{circles}
+
+\ifbeamer@white
+  \usecolortheme{WisconsinWhite}
+\else
+  \usecolortheme{Wisconsin}
+\fi
+
+% Circles are much nicer for bullet points, but the circles
+% inner theme does not give you rounded boxes.  Override these
+% settings as in the rounded theme.
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\setbeamertemplate{blocks}[rounded]
+
+
+% Disable the navigation bar unless it was explicitly requested
+\ifbeamer@nav
+\else
+  \setbeamertemplate{navigation symbols}{}
+\fi
+
+\setbeamerfont{block title}{size={}}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{headline}
+{%
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1pt]{lower fine separation line head}
+  \end{beamercolorbox}
+}
+
+% \setbeamertemplate{headline}
+% {%
+%   \begin{beamercolorbox}{section in head/foot}
+%     \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[colsep=1pt]{lower separation line head}
+%   \end{beamercolorbox}
+% }
+\setbeamertemplate{footline}[frame number]
+
+\mode
+<all>
