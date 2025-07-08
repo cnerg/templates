@@ -75,3 +75,14 @@
 %%%%%%%%%% Set graphics path
 
 \graphicspath{{images}}
+
+%%% Enable bibliography with single subfile compile
+\AtEndDocument{%
+\ifSubfilesClassLoaded{
+    \newpage
+    \singlespacing
+    \bibliographystyle{ans}
+    \bibliography{backmatter/bibliography}
+    \printbibliography
+    }
+}
