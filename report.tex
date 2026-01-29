@@ -1,0 +1,184 @@
+% Report identifiers
+% They are unique alphanumeric designations that may identify the responsible
+% organization, the report series/collection and the individual report (i.e.
+% Rapporti ISTISAN 05/2 stands for a report of the series Rapporti ISTISAN
+% produced in the year 2005 and it is the second report of the year).
+
+% ISSN/ISBN and other codes
+% ISSN is the International Standard Serial Number that is assigned on request
+% by the ISSN Authority (www.issn.org) for reports that are produced in a
+% series; the ISBN is the International Standard Book Number that is assigned
+% on request by the ISBN Authority to each single issue (www.isbn.org). The
+% report may also have other codes, such as DOI (Digital Object Identifier),
+% which may be obtained on request by each authority. More than one code may
+% appear in a report.
+
+% Place and date of publication
+% It is important to include the place and date of publication, both for
+% bibliographic identification and priority concerns. This information may
+% appear in the title page or in the back of the title page.
+
+% This document has been modified from its original version by Kathryn Huff 
+% Acknowledgement of the original version is below.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Academic Title Page
+% LaTeX Template
+% Version 2.0 (17/7/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (LaTeX - Title Creation) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+% 
+% Instructions for using this template:
+% This title page is capable of being compiled as is. This is not useful for 
+% including it in another document. To do this, you have two options: 
+%
+% 1) Copy/paste everything between \begin{document} and \end{document} 
+% starting at \begin{titlepage} and paste this into another LaTeX file where you 
+% want your title page.
+% OR
+% 2) Remove everything outside the \begin{titlepage} and \end{titlepage}, rename
+% this file and move it to the same directory as the LaTeX file you wish to add it to. 
+% Then add \input{./<new filename>.tex} to your LaTeX file where you want your
+% title page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx} % For the logo
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}  % provides the algorithmic commands
+\usepackage[most]{tcolorbox} % for framing
+\usepackage{subcaption} %for subfigures
+\usepackage{subfigure} %for subfigures 
+
+
+% hyperref usually has to go last
+\usepackage[hidelinks]{hyperref}
+% but glossaries behaves best if after hyperref
+\usepackage[acronym,toc]{glossaries}
+\setlength{\parskip}{5pt}
+\makeglossaries
+\usepackage[top=2.5cm, bottom=2.5cm, right=2.5cm, left=2.5cm]{geometry}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+    
+    \center % Centre everything on the page
+
+    %------------------------------------------------
+    %    Title
+    %------------------------------------------------
+    \HRule
+    \vspace{0.1cm}
+        \begin{minipage}{0.8\textwidth}
+        {\begin{center}\huge\bfseries YOUR COOL REPORT TITILE
+                           \end{center}}
+        {\begin{center}\large\textit{PROJECT ID 12312313}\end{center}}
+        \end{minipage}
+
+    \vspace{0.2cm}
+    \HRule
+    \vspace{0.5cm}
+    
+    %------------------------------------------------
+    %    Author(s)
+    %------------------------------------------------
+       \begin{minipage}{0.4\textwidth}
+               \begin{flushleft}
+                       \large
+                       \textit{Prepared for:}\\
+                       \textsc{CNERG}\\ %
+                        \textsc{Contract} NEEPUW\\ %
+                \end{flushleft}
+       \end{minipage}
+       ~
+       \begin{minipage}{0.4\textwidth}
+               \begin{flushright}
+                       \large
+                       \textit{Prepared by:}\\
+                       \textsc{Ebny Walid Ahammed}\\ %
+                       \vspace{4mm}\\
+                       \textit{Principal Investigator:}\\ %
+                       \textsc{Prof. Paul P.H. WILSON}\\
+               \end{flushright}
+    \end{minipage}
+    
+    % If you don't want a supervisor, uncomment the two lines below and comment the code above
+    %{\large\textit{Author}}\\
+    %John \textsc{Smith} % Your name
+
+    %------------------------------------------------
+    %    Report Number
+    %------------------------------------------------
+    \vspace{1cm}
+    \textsc{\LARGE\bfseries CNERG-UW-Madison} % Replace YYYY with the year, NN with report index
+    \vspace{0.1cm}
+    
+    %------------------------------------------------
+    %    Date
+    %------------------------------------------------
+    
+    \vspace{0.5cm} % Position the date further down the remaining page
+    {\large Jan 30-2026}
+    \vspace{0.5cm}
+
+%------------------------------------------------
+    %    Headings
+    %------------------------------------------------
+    
+    \textsc{ Computational Nuclear Engineering Research Group}\\[0.25cm] % Research Group
+    
+    \textsc{\large Dept. of Nuclear Engineering \& Enginerring Physics}\\% Department
+    
+    \textsc{\large University of Wisconsin-Madison}\\ % University
+
+
+    
+    %------------------------------------------------
+    %    Logo
+    %------------------------------------------------
+    
+    \vspace{0.5cm}
+    \includegraphics[width=0.5\textwidth]{report-template/UW_main.pdf}\\[1cm] % Include a department/university logo - this will require the graphicx package
+     
+    %----------------------------------------------------------------------------------------
+
+    %------------------------------------------------
+    %   Funding 
+    %------------------------------------------------
+    % For this section, either use \vfill to fill the space 
+    % or insert funding acknowledgement
+    \textit{This research was performed using funding received from a cool source of award,’ Award Number 2312390u13}
+
+\end{titlepage}
+%----------------------------------------------------------------------------------------
+\pagebreak
+\include{main}
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+\end{document}
+
