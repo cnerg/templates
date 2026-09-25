@@ -22,6 +22,8 @@ So add all the italic emojis to your hearts content.
 
  - `example-thesis.tex`: This is the main LaTeX file that points to all other information. This file is meant to be edited. See below for specific inputs for this file.
 
+ - `main.tex`: This is the recommended filename for your actual main file. It starts as a sym-link to the example. It is recommended you delete the link and make a copy of the example to start from.
+
  - `includes/`: contains all information related to formatting and settings for the document
 
     - `preamble.tex`: contains all things that would be found in the preamble of a document (aka the top part). This currently is just all required `\usepackage{}` inputs and some thesis required styling. This file is meant to be edited to include more packages as necessary.
