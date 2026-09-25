@@ -59,6 +59,8 @@ So add all the italic emojis to your hearts content.
 
  - `content/`: content for all your technical chapters/sections/subsections. Feel free to use whichever structure of files in this folder your heart desires. Any file you wish to include should be listed with `\input` in some other file, even if it is the main `example-thesis.tex` file.
 
+ - `images/`: a folder for all your images and figures to avoid clutter elsewhere. You can either dump everything in here or add more structure as you see fit. 
+
  - `ans.bst`: bibliography style following ANS standards
 
  - `makefile`: this is a starting makefile to create your document. Replace the first line in this file with the name of your main document (sans `.tex`) if it is not `example-thesis.tex`, and update the second line with your bibliography file location if it is not in the default location. To use, simply type `make` into the command line (or `make all` or `make all-via-pdf`). All build and auxiliary files are put into a `build/` folder (that is already ignored by the `.gitignore`). A compiled copy of the pdf is placed into the main folder when it is done building. `make clean` will remove all files produced by the build process.
