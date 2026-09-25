@@ -4,9 +4,25 @@ It follows UW-Madison [formatting requirements](https://grad.wisc.edu/current-st
 Below you will find explanations of the different files and inputs you can customize.
 Adapted from: [https://github.com/willb/wi-thesis-template]
 
+## Note on Compilers
+
+TeX, (and LaTeX, and pdfLaTeX) largely predates a lot of modern text encoding systems. 
+Namely they do not support:
+
+1. Unicode character encodings
+2. Modern font formats. 
+
+For these reasons a lot of documents compile with pdfLaTeX are very difficult to extract text from.
+Therefore, it is highly that you compile your document using either luaLaTeX, or xeLaTeX.
+In fact this template presumes you are using one of these.
+Both compilers support Unicode and modern font formats. 
+So add all the italic emojis to your hearts content. 
+
 ## File Structure:
 
  - `example-thesis.tex`: This is the main LaTeX file that points to all other information. This file is meant to be edited. See below for specific inputs for this file.
+
+ - `main.tex`: This is the recommended filename for your actual main file. It starts as a sym-link to the example. It is recommended you delete the link and make a copy of the example to start from.
 
  - `includes/`: contains all information related to formatting and settings for the document
 
@@ -22,7 +38,6 @@ Adapted from: [https://github.com/willb/wi-thesis-template]
 
     - `acknowledgements.tex`: Write your acknowledgements here.
 
-    - `acronyms.tex`: this is where you define acronyms to use throughout your document. It follows the `acro` package syntax. Only the acronyms from this list that are used in the text of the main file will appear in the nomenclature list. Acronyms can be used in text with the `\ac{}` command.
 
     - `abstract.tex`: Write your abstract here.
 
@@ -34,13 +49,51 @@ Adapted from: [https://github.com/willb/wi-thesis-template]
 
     - `appendix.tex`: create or include any appendices in this file.
 
+ - `includes/`: this folder contains definitions, and shorthands that are more content than format specifications. For example: acronyms.
+    
+    - `acronyms.tex`: this is where you define acronyms to use throughout your document. It follows the `acro` package syntax. Only the acronyms from this list that are used in the text of the main file will appear in the nomenclature list. Acronyms can be used in text with the `\ac{}` command.
+   
+   - `glossary.tex`: this is where you define terms that would be good for a glossary or index, namely key phrases to your work. Once defined these should be referred to with `\gls{foo}`
+
+   - `nomenclature.tex`: where to define mathematical nomenclature. This is also the recommended location for creating custom math symbols and operators, or for making shorthand commands. Please, make shorthand commands for your common equation motifs. 
+
  - `content/`: content for all your technical chapters/sections/subsections. Feel free to use whichever structure of files in this folder your heart desires. Any file you wish to include should be listed with `\input` in some other file, even if it is the main `example-thesis.tex` file.
+
+ - `images/`: a folder for all your images and figures to avoid clutter elsewhere. You can either dump everything in here or add more structure as you see fit. 
 
  - `ans.bst`: bibliography style following ANS standards
 
  - `makefile`: this is a starting makefile to create your document. Replace the first line in this file with the name of your main document (sans `.tex`) if it is not `example-thesis.tex`, and update the second line with your bibliography file location if it is not in the default location. To use, simply type `make` into the command line (or `make all` or `make all-via-pdf`). All build and auxiliary files are put into a `build/` folder (that is already ignored by the `.gitignore`). A compiled copy of the pdf is placed into the main folder when it is done building. `make clean` will remove all files produced by the build process.
 
 Examples of chapters, sections, figures, etc. are included in the content folder.
+
+### Using subfiles
+
+This project has moved towards using [subfiles](https://ctan.org/pkg/subfiles) over raw `\input` in most cases. 
+This allows you to make multi-file projects that compile into a large document, but allows you to focus on each file individually, by allowing each file to be compiled on its own.
+
+When adding a new file you will need to include a mini-preamble like:
+
+
+``` latex 
+% note you may need to change the relative path if the nesting changes
+\documentclass[../../main.tex]{subfiles}
+
+% allows all figures to live in images
+\graphicspath{{\subfix{../../images}}}
+
+\begin{document}
+% Start of actual text
+% generally a chapter, or section per file is a good level of subdivision to start with.
+\chapter{foo}
+
+
+\end{document}
+```
+
+Then in the file where you want to include this you use the `\subfile` command, instead of `\input`. 
+For example: to include `foo.tex` you would just add `\subfile{foo}`. (File extensions are optional in LaTeX).
+When compiling just a subfile the bibliograhy will be automatically added to the end.
 
 ## Personal Customization:
 
@@ -73,12 +126,6 @@ Each required input currently has an example, but below is a description of each
 
 To add all your content, `\input` the files of the `content/` folder in the document section of `example-thesis.tex`.
 
-## Special Notes:
-
-This template does not work well with the `glossaries` package.
-This package can be used for using acronyms in text (use `\gls{}` and update `acronyms.tex` with the appropriate syntax), but it will not format a list of acronyms at the beginning of the document (PRs welcome to fix this!).
-If you already have text written that uses the `glossaries` `\gls{}`, an easy way to get around formatting errors is to add this command to your main document to process all `\gls{}` calls as `\ac{}` calls instead:
-`\newcommand{\gls}[1]{\ac{#1}}`
 
 ## Updating this template:
 
