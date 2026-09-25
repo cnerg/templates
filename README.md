@@ -65,6 +65,30 @@ So add all the italic emojis to your hearts content.
 
 Examples of chapters, sections, figures, etc. are included in the content folder.
 
+### Using subfiles
+
+This project has moved towards using [subfiles](https://ctan.org/pkg/subfiles) over raw `\input` in most cases. 
+This allows you to make multi-file projects that compile into a large document, but allows you to focus on each file individually, by allowing each file to be compiled on its own.
+
+When adding a new file you will need to include a mini-preamble like:
+
+
+``` latex 
+% note you may need to change the relative path if the nesting changes
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+% Start of actual text
+% generally a chapter, or section per file is a good level of subdivision to start with.
+\chapter{foo}
+
+
+\end{document}
+```
+
+Then in the file where you want to include this you use the `\subfile` command, instead of `\input`. 
+For example: to include `foo.tex` you would just add `\subfile{foo}`. (File extensions are optional in LaTeX).
+
 ## Personal Customization:
 
 The majority of the files above are for formatting and structure and generally not meant for much customization (see specific notes for each).
