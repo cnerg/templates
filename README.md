@@ -77,6 +77,9 @@ When adding a new file you will need to include a mini-preamble like:
 % note you may need to change the relative path if the nesting changes
 \documentclass[../../main.tex]{subfiles}
 
+% allows all figures to live in images
+\graphicspath{{\subfix{../../images}}}
+
 \begin{document}
 % Start of actual text
 % generally a chapter, or section per file is a good level of subdivision to start with.
@@ -88,6 +91,7 @@ When adding a new file you will need to include a mini-preamble like:
 
 Then in the file where you want to include this you use the `\subfile` command, instead of `\input`. 
 For example: to include `foo.tex` you would just add `\subfile{foo}`. (File extensions are optional in LaTeX).
+When compiling just a subfile the bibliograhy will be automatically added to the end.
 
 ## Personal Customization:
 
