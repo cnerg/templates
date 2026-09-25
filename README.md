@@ -73,12 +73,6 @@ Each required input currently has an example, but below is a description of each
 
 To add all your content, `\input` the files of the `content/` folder in the document section of `example-thesis.tex`.
 
-## Special Notes:
-
-This template does not work well with the `glossaries` package.
-This package can be used for using acronyms in text (use `\gls{}` and update `acronyms.tex` with the appropriate syntax), but it will not format a list of acronyms at the beginning of the document (PRs welcome to fix this!).
-If you already have text written that uses the `glossaries` `\gls{}`, an easy way to get around formatting errors is to add this command to your main document to process all `\gls{}` calls as `\ac{}` calls instead:
-`\newcommand{\gls}[1]{\ac{#1}}`
 
 ## Updating this template:
 
