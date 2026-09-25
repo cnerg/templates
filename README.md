@@ -4,6 +4,20 @@ It follows UW-Madison [formatting requirements](https://grad.wisc.edu/current-st
 Below you will find explanations of the different files and inputs you can customize.
 Adapted from: [https://github.com/willb/wi-thesis-template]
 
+## Note on Compilers
+
+TeX, (and LaTeX, and pdfLaTeX) largely predates a lot of modern text encoding systems. 
+Namely they do not support:
+
+1. Unicode character encodings
+2. Modern font formats. 
+
+For these reasons a lot of documents compile with pdfLaTeX are very difficult to extract text from.
+Therefore, it is highly that you compile your document using either luaLaTeX, or xeLaTeX.
+In fact this template presumes you are using one of these.
+Both compilers support Unicode and modern font formats. 
+So add all the italic emojis to your hearts content. 
+
 ## File Structure:
 
  - `example-thesis.tex`: This is the main LaTeX file that points to all other information. This file is meant to be edited. See below for specific inputs for this file.
@@ -22,7 +36,6 @@ Adapted from: [https://github.com/willb/wi-thesis-template]
 
     - `acknowledgements.tex`: Write your acknowledgements here.
 
-    - `acronyms.tex`: this is where you define acronyms to use throughout your document. It follows the `acro` package syntax. Only the acronyms from this list that are used in the text of the main file will appear in the nomenclature list. Acronyms can be used in text with the `\ac{}` command.
 
     - `abstract.tex`: Write your abstract here.
 
@@ -33,6 +46,14 @@ Adapted from: [https://github.com/willb/wi-thesis-template]
     - `bibliography.bib`: bibtex file
 
     - `appendix.tex`: create or include any appendices in this file.
+
+ - `includes/`: this folder contains definitions, and shorthands that are more content than format specifications. For example: acronyms.
+    
+    - `acronyms.tex`: this is where you define acronyms to use throughout your document. It follows the `acro` package syntax. Only the acronyms from this list that are used in the text of the main file will appear in the nomenclature list. Acronyms can be used in text with the `\ac{}` command.
+   
+   - `glossary.tex`: this is where you define terms that would be good for a glossary or index, namely key phrases to your work. Once defined these should be referred to with `\gls{foo}`
+
+   - `nomenclature.tex`: where to define mathematical nomenclature. This is also the recommended location for creating custom math symbols and operators, or for making shorthand commands. Please, make shorthand commands for your common equation motifs. 
 
  - `content/`: content for all your technical chapters/sections/subsections. Feel free to use whichever structure of files in this folder your heart desires. Any file you wish to include should be listed with `\input` in some other file, even if it is the main `example-thesis.tex` file.
 
