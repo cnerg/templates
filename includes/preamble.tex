@@ -6,6 +6,9 @@
 \usepackage{setspace} % allows setting single, 1.5, or double spacing for lines
 \usepackage{enumitem} % allows enumeration such as numbered or bulleted lists
 \hypersetup{pdfborder = 0 0 0} % removes boxes around clickable things
+% use a UTF-8 version of Computer modern
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{CMUSerif}
 
 %% floats: figures, tables, captions
 \usepackage[font={small,it}]{caption} % captions on floats. Formatting is set for italicized and smaller font
@@ -23,15 +26,22 @@
 \usepackage{amssymb} % math symbols
 \usepackage{amsmath} % write math equations
 \usepackage{amsthm} % can write math theorem type of things
+\usepackage{bm}  % for good matrix bold math symbols
 
 %% acronyms and glossaries
-\usepackage{glossaries}
+\usepackage[acronym,xindy]{glossaries}
 \glstoctrue
 \makeglossaries
+
+% math nomeclature
+\usepackage{nomencl}
+\makenomenclature
 
 % clever referencing package must be loaded LAST otherwise it will not work
 \usepackage[noabbrev, capitalize]{cleveref} % for clever referencing \cref{} without having to manually write the word "Figure", etc.
 
+%Must be last package.
+% used for simpler multi-file documents
 \usepackage{subfiles}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,13 +86,12 @@
 
 \graphicspath{{images}}
 
-%%% Enable bibliography with single subfile compile
+% Bib
+\bibliographystyle{ans}
+
 \AtEndDocument{%
 \ifSubfilesClassLoaded{
     \newpage
-    \singlespacing
-    \bibliographystyle{ans}
     \bibliography{backmatter/bibliography}
-    \printbibliography
     }
 }
