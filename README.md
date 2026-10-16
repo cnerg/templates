@@ -13,10 +13,9 @@ Namely they do not support:
 2. Modern font formats. 
 
 For these reasons a lot of documents compile with pdfLaTeX are very difficult to extract text from.
-Therefore, it is highly that you compile your document using either luaLaTeX, or xeLaTeX.
+Therefore, it is highly recommended that you compile your document using either luaLaTeX, or xeLaTeX.
 In fact this template presumes you are using one of these.
-Both compilers support Unicode and modern font formats. 
-So add all the italic emojis to your hearts content. 
+Both compilers support Unicode and modern font formats; so add all the italic emojis to your hearts content. 
 
 ## File Structure:
 
@@ -70,7 +69,7 @@ Examples of chapters, sections, figures, etc. are included in the content folder
 ### Using subfiles
 
 This project has moved towards using [subfiles](https://ctan.org/pkg/subfiles) over raw `\input` in most cases. 
-This allows you to make multi-file projects that compile into a large document, but allows you to focus on each file individually, by allowing each file to be compiled on its own.
+This allows you to make multi-file projects that compile into a large document, but allows you to focus on each file individually by allowing each file to be compiled on its own.
 
 When adding a new file you will need to include a mini-preamble like:
 
@@ -92,7 +91,7 @@ When adding a new file you will need to include a mini-preamble like:
 ```
 
 Then in the file where you want to include this you use the `\subfile` command, instead of `\input`. 
-For example: to include `foo.tex` you would just add `\subfile{foo}`. (File extensions are optional in LaTeX).
+For example: to include `foo.tex` you would just add `\subfile{foo}` (File extensions are optional in LaTeX).
 When compiling just a subfile the bibliograhy will be automatically added to the end.
 
 ## Personal Customization:
